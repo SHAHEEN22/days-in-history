@@ -1,1 +1,99 @@
-{"data":"aW1wb3J0IHsgVmVyY2VsUmVxdWVzdCwgVmVyY2VsUmVzcG9uc2UgfSBmcm9tICdAdmVyY2VsL25vZGUnOwppbXBvcnQgeyBSZWRpcyB9IGZyb20gJ0B1cHN0YXNoL3JlZGlzJzsKCmNvbnN0IGt2ID0gbmV3IFJlZGlzKHsKICB1cmw6IHByb2Nlc3MuZW52LktWX1JFU1RfQVBJX1VSTCEsCiAgdG9rZW46IHByb2Nlc3MuZW52LktWX1JFU1RfQVBJX1RPS0VOIQp9KTsKCmludGVyZmFjZSBEYWlseUV2ZW50IHsKICBoZWFkbGluZTogc3RyaW5nOwogIHN1bW1hcnk6IHN0cmluZzsKICB5ZWFyOiBudW1iZXI7CiAgY2F0ZWdvcnk6IHN0cmluZzsKICBkaXNwbGF5RGF0ZTogc3RyaW5nOwogIHJlZ2lvbjogc3RyaW5nOwogIHRhZ3M6IHN0cmluZ1tdOwogIGdlbmVyYXRlZEF0OiBzdHJpbmc7Cn0KCmNvbnN0IFJGQ19EQVlTID0gWydTdW4nLCAnTW9uJywgJ1R1ZScsICdXZWQnLCAnVGh1JywgJ0ZyaScsICdTYXQnXTsKY29uc3QgUkZDX01PTlRIUyA9IFsnSmFuJywgJ0ZlYicsICdNYXInLCAnQXByJywgJ01heScsICdKdW4nLCAnSnVsJywgJ0F1ZycsICdTZXAnLCAnT2N0JywgJ05vdicsICdEZWMnXTsKCmZ1bmN0aW9uIHRvUmZjRGF0ZShkYXRlU3RyOiBzdHJpbmcpOiBzdHJpbmcgewogIGNvbnN0IGQgPSBuZXcgRGF0ZShkYXRlU3RyKTsKICByZXR1cm4gYCR7UkZDX0RBWVNbZC5nZXRVVENEYXkoKV19LCAke1N0cmluZyhkLmdldFVUQ0RhdGUoKSkucGFkU3RhcnQoMiwgJzAnKX0gJHtSRkNfTU9OVEhTW2QuZ2V0VVRDTW9udGgoKV19ICR7ZC5nZXRVVENGdWxsWWVhcigpfSAwMDowMDowMCArMDAwMGA7Cn0KCmZ1bmN0aW9uIGZvcm1hdFllYXIoeWVhcjogbnVtYmVyKTogc3RyaW5nIHsKICByZXR1cm4geWVhciA8IDAgPyBgJHtNYXRoLmFicyh5ZWFyKX0gQkNFYCA6IGAke3llYXJ9IENFYDsKfQoKZnVuY3Rpb24gZXNjYXBlWG1sKHN0cjogc3RyaW5nKTogc3RyaW5nIHsKICByZXR1cm4gc3RyCiAgICAucmVwbGFjZSgvJi9nLCAnJmFtcDsnKQogICAgLnJlcGxhY2UoLzwvZywgJyZsdDsnKQogICAgLnJlcGxhY2UoLz4vZywgJyZndDsnKQogICAgLnJlcGxhY2UoLyIvZywgJyZxdW90OycpCiAgICAucmVwbGFjZSgvJy9nLCAnJmFwb3M7Jyk7Cn0KCmV4cG9ydCBkZWZhdWx0IGFzeW5jIGZ1bmN0aW9uIGhhbmRsZXIocmVxOiBWZXJjZWxSZXF1ZXN0LCByZXM6IFZlcmNlbFJlc3BvbnNlKSB7CiAgaWYgKHJlcS5tZXRob2QgIT09ICdHRVQnKSB7CiAgICByZXR1cm4gcmVzLnN0YXR1cyg0MDUpLnNlbmQoJ01ldGhvZCBub3QgYWxsb3dlZCcpOwogIH0KCiAgdHJ5IHsKICAgIGNvbnN0IGhvc3QgPSByZXEuaGVhZGVycy5ob3N0ID8/ICdkYXlzLWluLWhpc3RvcnkudmVyY2VsLmFwcCc7CiAgICBjb25zdCBwcm90b2NvbCA9IGhvc3QuaW5jbHVkZXMoJ2xvY2FsaG9zdCcpID8gJ2h0dHAnIDogJ2h0dHBzJzsKICAgIGNvbnN0IGJhc2VVcmwgPSBgJHtwcm90b2NvbH06Ly8ke2hvc3R9YDsKCiAgICAvLyBDb2xsZWN0IGxhc3QgMTQgZGF5cyBvZiBldmVudHMKICAgIGNvbnN0IHRvZGF5ID0gbmV3IERhdGUoKTsKICAgIGNvbnN0IGl0ZW1zOiBBcnJheTx7IGRhdGVLZXk6IHN0cmluZzsgZXZlbnQ6IERhaWx5RXZlbnQgfT4gPSBbXTsKCiAgICBmb3IgKGxldCBpID0gMDsgaSA8IDE0OyBpKyspIHsKICAgICAgY29uc3QgZCA9IG5ldyBEYXRlKERhdGUuVVRDKHRvZGF5LmdldFVUQ0Z1bGxZZWFyKCksIHRvZGF5LmdldFVUQ01vbnRoKCksIHRvZGF5LmdldFVUQ0RhdGUoKSAtIGkpKTsKICAgICAgY29uc3QgbW0gPSBTdHJpbmcoZC5nZXRVVENNb250aCgpICsgMSkucGFkU3RhcnQoMiwgJzAnKTsKICAgICAgY29uc3QgZGQgPSBTdHJpbmcoZC5nZXRVVENEYXRlKCkpLnBhZFN0YXJ0KDIsICcwJyk7CiAgICAgIGNvbnN0IGRhdGVLZXkgPSBgJHttbX0ke2RkfWA7CiAgICAgIGNvbnN0IGV2ZW50ID0gYXdhaXQga3YuZ2V0PERhaWx5RXZlbnQ+KGBldmVudDoke2RhdGVLZXl9YCk7CiAgICAgIGlmIChldmVudCkgewogICAgICAgIGl0ZW1zLnB1c2goeyBkYXRlS2V5LCBldmVudCB9KTsKICAgICAgfQogICAgfQoKICAgIGNvbnN0IGl0ZW1zWG1sID0gaXRlbXMubWFwKCh7IGRhdGVLZXksIGV2ZW50IH0pID0+IHsKICAgICAgY29uc3QgbGluayA9IGAke2Jhc2VVcmx9Lz9kYXRlPSR7ZGF0ZUtleX1gOwogICAgICBjb25zdCBwdWJEYXRlID0gdG9SZmNEYXRlKGV2ZW50LmdlbmVyYXRlZEF0ID8/IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKSk7CiAgICAgIHJldHVybiBgICAgIDxpdGVtPgogICAgICA8dGl0bGU+JHtlc2NhcGVYbWwoYCR7ZXZlbnQuaGVhZGxpbmV9ICgke2Zvcm1hdFllYXIoZXZlbnQueWVhcil9KWApfTwvdGl0bGU+CiAgICAgIDxkZXNjcmlwdGlvbj4ke2VzY2FwZVhtbChldmVudC5zdW1tYXJ5KX08L2Rlc2NyaXB0aW9uPgogICAgICA8cHViRGF0ZT4ke3B1YkRhdGV9PC9wdWJEYXRlPgogICAgICA8bGluaz4ke2xpbmt9PC9saW5rPgogICAgICA8Z3VpZCBpc1Blcm1hTGluaz0idHJ1ZSI+JHtsaW5rfTwvZ3VpZD4KICAgICAgPGNhdGVnb3J5PiR7ZXNjYXBlWG1sKGV2ZW50LmNhdGVnb3J5KX08L2NhdGVnb3J5PgogICAgPC9pdGVtPmA7CiAgICB9KS5qb2luKCdcbicpOwoKICAgIGNvbnN0IHJzcyA9IGA8P3htbCB2ZXJzaW9uPSIxLjAiIGVuY29kaW5nPSJVVEYtOCI/Pgo8cnNzIHZlcnNpb249IjIuMCIgeG1sbnM6YXRvbT0iaHR0cDovL3d3dy53My5vcmcvMjAwNS9BdG9tIj4KICA8Y2hhbm5lbD4KICAgIDx0aXRsZT5EYXlzIGluIEhpc3Rvcnk8L3RpdGxlPgogICAgPGxpbms+JHtiYXNlVXJsfTwvbGluaz4KICAgIDxkZXNjcmlwdGlvbj5PbmUgZmFzY2luYXRpbmcgaGlzdG9yaWNhbCBldmVudCBlYWNoIGRheSDigJQgYW5jaWVudCB3b3JsZHMsIG1lZGlldmFsIGVtcGlyZXMsIGVhcmx5IG1vZGVybiBwb3dlcnM8L2Rlc2NyaXB0aW9uPgogICAgPGxhbmd1YWdlPmVuLXVzPC9sYW5ndWFnZT4KICAgIDxhdG9tOmxpbmsgaHJlZj0iJHtiYXNlVXJsfS9hcGkvZmVlZCIgcmVsPSJzZWxmIiB0eXBlPSJhcHBsaWNhdGlvbi9yc3MreG1sIi8+CiAgICA8Y29weXJpZ2h0PkN1cmF0ZWQgYnkgWmlnZ3VyYXQ8L2NvcHlyaWdodD4KJHtpdGVtc1htbH0KICA8L2NoYW5uZWw+CjwvcnNzPmA7CgogICAgcmVzLnNldEhlYWRlcignQ29udGVudC1UeXBlJywgJ2FwcGxpY2F0aW9uL3Jzcyt4bWw7IGNoYXJzZXQ9dXRmLTgnKTsKICAgIHJlcy5zZXRIZWFkZXIoJ0NhY2hlLUNvbnRyb2wnLCAncHVibGljLCBtYXgtYWdlPTM2MDAnKTsKICAgIHJldHVybiByZXMuc3RhdHVzKDIwMCkuc2VuZChyc3MpOwogIH0gY2F0Y2ggKGVycikgewogICAgY29uc29sZS5lcnJvcignRXJyb3IgaW4gL2FwaS9mZWVkOicsIGVycik7CiAgICByZXR1cm4gcmVzLnN0YXR1cyg1MDApLnNlbmQoJ0ludGVybmFsIHNlcnZlciBlcnJvcicpOwogIH0KfQo="}
+import { VercelRequest, VercelResponse } from '@vercel/node';
+import { Redis } from '@upstash/redis';
+
+const kv = new Redis({
+  url: process.env.KV_REST_API_URL!,
+  token: process.env.KV_REST_API_TOKEN!
+});
+
+interface DailyEvent {
+  headline: string;
+  summary: string;
+  year: number;
+  category: string;
+  displayDate: string;
+  region: string;
+  tags: string[];
+  generatedAt: string;
+}
+
+const RFC_DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const RFC_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+function toRfcDate(dateStr: string): string {
+  const d = new Date(dateStr);
+  return `${RFC_DAYS[d.getUTCDay()]}, ${String(d.getUTCDate()).padStart(2, '0')} ${RFC_MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()} 00:00:00 +0000`;
+}
+
+function formatYear(year: number): string {
+  return year < 0 ? `${Math.abs(year)} BCE` : `${year} CE`;
+}
+
+function escapeXml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (req.method !== 'GET') {
+    return res.status(405).send('Method not allowed');
+  }
+
+  try {
+    const host = req.headers.host ?? 'days-in-history.vercel.app';
+    const protocol = host.includes('localhost') ? 'http' : 'https';
+    const baseUrl = `${protocol}://${host}`;
+
+    // Collect last 14 days of events
+    const today = new Date();
+    const items: Array<{ dateKey: string; event: DailyEvent }> = [];
+
+    for (let i = 0; i < 14; i++) {
+      const d = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate() - i));
+      const mm = String(d.getUTCMonth() + 1).padStart(2, '0');
+      const dd = String(d.getUTCDate()).padStart(2, '0');
+      const dateKey = `${mm}${dd}`;
+      const event = await kv.get<DailyEvent>(`event:${dateKey}`);
+      if (event) {
+        items.push({ dateKey, event });
+      }
+    }
+
+    const itemsXml = items.map(({ dateKey, event }) => {
+      const link = `${baseUrl}/?date=${dateKey}`;
+      const pubDate = toRfcDate(event.generatedAt ?? new Date().toISOString());
+      return `    <item>
+      <title>${escapeXml(`${event.headline} (${formatYear(event.year)})`)}</title>
+      <description>${escapeXml(event.summary)}</description>
+      <pubDate>${pubDate}</pubDate>
+      <link>${link}</link>
+      <guid isPermaLink="true">${link}</guid>
+      <category>${escapeXml(event.category)}</category>
+    </item>`;
+    }).join('\n');
+
+    const rss = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Days in History</title>
+    <link>${baseUrl}</link>
+    <description>One fascinating historical event each day — ancient worlds, medieval empires, early modern powers</description>
+    <language>en-us</language>
+    <atom:link href="${baseUrl}/api/feed" rel="self" type="application/rss+xml"/>
+    <copyright>Curated by Ziggurat</copyright>
+${itemsXml}
+  </channel>
+</rss>`;
+
+    res.setHeader('Content-Type', 'application/rss+xml; charset=utf-8');
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+    return res.status(200).send(rss);
+  } catch (err) {
+    console.error('Error in /api/feed:', err);
+    return res.status(500).send('Internal server error');
+  }
+}

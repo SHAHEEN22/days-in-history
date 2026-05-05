@@ -1,1 +1,17 @@
-{"data":"ewogICJuYW1lIjogImRheXMtaW4taGlzdG9yeSIsCiAgInZlcnNpb24iOiAiMS4wLjAiLAogICJwcml2YXRlIjogdHJ1ZSwKICAic2NyaXB0cyI6IHsKICAgICJkZXYiOiAidmVyY2VsIGRldiIKICB9LAogICJkZXBlbmRlbmNpZXMiOiB7CiAgICAiQGFudGhyb3BpYy1haS9zZGsiOiAiXjAuMzkuMCIsCiAgICAiQHVwc3Rhc2gvcmVkaXMiOiAiXjEuMzQuMCIsCiAgICAiQHZlcmNlbC9ub2RlIjogIl41LjAuMCIKICB9LAogICJkZXZEZXBlbmRlbmNpZXMiOiB7CiAgICAiQHR5cGVzL25vZGUiOiAiXjIyLjAuMCIsCiAgICAidHlwZXNjcmlwdCI6ICJeNS43LjAiCiAgfQp9Cg=="}
+{
+  "name": "days-in-history",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@upstash/redis": "^1.34.0",
+    "@vercel/node": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}

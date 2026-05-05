@@ -1,1 +1,13 @@
-{"data":"ewogICJjb21waWxlck9wdGlvbnMiOiB7CiAgICAidGFyZ2V0IjogIkVTMjAyMCIsCiAgICAibW9kdWxlIjogImNvbW1vbmpzIiwKICAgICJsaWIiOiBbIkVTMjAyMCJdLAogICAgInN0cmljdCI6IHRydWUsCiAgICAiZXNNb2R1bGVJbnRlcm9wIjogdHJ1ZSwKICAgICJza2lwTGliQ2hlY2siOiB0cnVlLAogICAgIm1vZHVsZVJlc29sdXRpb24iOiAibm9kZSIKICB9LAogICJpbmNsdWRlIjogWyJhcGkvKiovKiJdLAogICJleGNsdWRlIjogWyJub2RlX21vZHVsZXMiXQp9Cg=="}
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "lib": ["ES2020"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node"
+  },
+  "include": ["api/**/*"],
+  "exclude": ["node_modules"]
+}
