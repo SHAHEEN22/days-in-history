@@ -54,12 +54,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     for (let i = 0; i < 14; i++) {
       const d = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate() - i));
+      const yyyy = d.getUTCFullYear();
       const mm = String(d.getUTCMonth() + 1).padStart(2, '0');
       const dd = String(d.getUTCDate()).padStart(2, '0');
-      const dateKey = `${mm}${dd}`;
-      const event = await kv.get<DailyEvent>(`event:${dateKey}`);
+      const mmdd = `${mm}${dd}`;
+      const dateKey = `${yyyy}-${mmdd}`;
+
+      // Try new key first, fall back to legacy
+      let event = await kv.get<DailyEvent>(`event:${dateKey}`);
+      if (!event) {
+        event = await kv.get<DailyEvent>(`event:${mmdd}`);
+      }
       if (event) {
-        items.push({ dateKey, event });
+        items.push({ dateKey: mmdd, event });
       }
     }
 
@@ -97,3 +104,4 @@ ${itemsXml}
     return res.status(500).send('Internal server error');
   }
 }
+
