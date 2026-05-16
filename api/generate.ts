@@ -18,6 +18,12 @@ interface DailyEvent {
   generatedAt: string;
 }
 
+interface WikipediaEvent {
+  text: string;
+  year: number;
+  pages?: Array<{ title: string; extract?: string }>;
+}
+
 const MONTH_NAMES = [
   'January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'
@@ -57,77 +63,64 @@ const FALLBACK_EVENTS: Array<Omit<DailyEvent, 'displayDate' | 'generatedAt'>> = 
   },
   {
     headline: "Battle of Marathon: Athens halts the first Persian invasion of Greece",
-    summary: "In 490 BCE, an Athenian force of roughly 10,000 men routed a Persian army of 25,000 at Marathon, saving Greek civilization from conquest. The victory preserved Athenian democracy at its most fragile moment. According to legend, the messenger Pheidippides ran the 26 miles to Athens to announce the triumph before dying of exhaustion — inspiring the modern marathon.",
+    summary: "In 490 BCE, an Athenian force of roughly 10,000 men routed a Persian army of 25,000 at Marathon, saving Greek civilization from conquest. The victory preserved Athenian democracy at its most fragile moment.",
     year: -490, category: 'warfare', region: 'europe', tags: ['greece', 'persia']
   },
   {
     headline: "Vasco da Gama reaches India, breaking the Muslim monopoly on the spice trade",
-    summary: "In May 1498, Portuguese navigator Vasco da Gama arrived at Calicut on India's Malabar Coast after rounding the Cape of Good Hope — the first European to reach India by sea. The achievement shattered the Venetian-Muslim monopoly on the lucrative spice trade and redirected global commerce. Within decades, Portugal controlled a vast maritime empire spanning three oceans.",
+    summary: "In May 1498, Portuguese navigator Vasco da Gama arrived at Calicut on India's Malabar Coast after rounding the Cape of Good Hope. The achievement shattered the Venetian-Muslim monopoly on the lucrative spice trade and redirected global commerce.",
     year: 1498, category: 'exploration', region: 'south_asia', tags: ['exploration', 'spice-trade']
   },
   {
     headline: "Genghis Khan unifies the Mongol tribes and launches the world's greatest conquest",
-    summary: "In 1206, Temujin was proclaimed Genghis Khan at a great kurultai of Mongol tribes he had unified through a decade of brutal warfare. He reorganized the army on meritocratic lines and issued a universal law code. Within two decades his forces would create the largest contiguous empire in history, stretching from the Pacific Ocean to Eastern Europe.",
+    summary: "In 1206, Temujin was proclaimed Genghis Khan at a great kurultai of Mongol tribes he had unified through a decade of brutal warfare. He reorganized the army on meritocratic lines and issued a universal law code. Within two decades his forces would create the largest contiguous empire in history.",
     year: 1206, category: 'politics', region: 'east_asia', tags: ['mongol', 'genghis-khan']
   },
   {
     headline: "Akbar the Great extends Mughal rule across the Indian subcontinent",
-    summary: "By 1600, the Mughal Emperor Akbar had extended his empire to encompass most of the Indian subcontinent through military conquest and shrewd diplomacy. He pursued a policy of radical religious tolerance, incorporating Hindu Rajput princes into his administration. His reign marked the apex of Mughal power and the flowering of a syncretic Indo-Islamic court culture.",
+    summary: "By 1600, the Mughal Emperor Akbar had extended his empire to encompass most of the Indian subcontinent through military conquest and shrewd diplomacy. He pursued a policy of radical religious tolerance, incorporating Hindu Rajput princes into his administration.",
     year: 1600, category: 'politics', region: 'south_asia', tags: ['mughal', 'akbar']
   },
   {
     headline: "Battle of Hastings: William the Conqueror seizes the English crown",
-    summary: "On October 14, 1066, Norman Duke William defeated King Harold II at Hastings, ending Anglo-Saxon rule in England. Harold was killed in the battle and William marched to London to be crowned on Christmas Day. The Norman Conquest fundamentally transformed English language, law, and feudal organization, reshaping a civilization for centuries.",
+    summary: "On October 14, 1066, Norman Duke William defeated King Harold II at Hastings, ending Anglo-Saxon rule in England. The Norman Conquest fundamentally transformed English language, law, and feudal organization.",
     year: 1066, category: 'warfare', region: 'europe', tags: ['normans', 'england']
   },
   {
     headline: "First Crusade captures Jerusalem after a brutal siege and massacre",
-    summary: "On July 15, 1099, Crusader forces captured Jerusalem after a 40-day siege, massacring thousands of the city's Muslim and Jewish inhabitants. The conquest established the Latin Kingdom of Jerusalem and marked the triumphant end of the First Crusade. The shock of the fall reverberated through the Islamic world and ignited two centuries of religious conflict in the Holy Land.",
+    summary: "On July 15, 1099, Crusader forces captured Jerusalem after a 40-day siege, massacring thousands of the city's Muslim and Jewish inhabitants. The conquest established the Latin Kingdom of Jerusalem.",
     year: 1099, category: 'religion', region: 'middle_east', tags: ['crusades', 'jerusalem']
   },
   {
-    headline: "Justinian I codifies Roman law in the Corpus Juris Civilis",
-    summary: "Between 529 and 534 CE, Byzantine Emperor Justinian I oversaw the compilation of the Corpus Juris Civilis, the definitive codification of Roman law. This monumental work synthesized centuries of jurisprudence and became the foundation of legal systems from France to Japan. Its influence on modern civil law remains profound and largely invisible in everyday legal practice.",
-    year: 534, category: 'politics', region: 'europe', tags: ['byzantine', 'roman-law']
-  },
-  {
-    headline: "Prophet Muhammad's Hijra to Medina founds the Islamic community-state",
-    summary: "In 622 CE, the Prophet Muhammad migrated from Mecca to Medina after years of persecution — the Hijra. The event was so pivotal that Muslims use it as year one of the Islamic calendar. In Medina, Muhammad established the first Islamic community-state, creating political and legal structures that would govern a civilization spanning three continents within a century.",
-    year: 622, category: 'religion', region: 'middle_east', tags: ['islam', 'muhammad']
+    headline: "Saladin recaptures Jerusalem, ending 88 years of Crusader rule",
+    summary: "On October 2, 1187, the Kurdish sultan Saladin recaptured Jerusalem from the Crusaders after the decisive Battle of Hattin. Unlike the bloody Crusader conquest of 1099, Saladin allowed Christian residents to leave safely.",
+    year: 1187, category: 'warfare', region: 'middle_east', tags: ['saladin', 'crusades']
   },
   {
     headline: "Hagia Sophia dedicated in Constantinople as the world's largest cathedral",
-    summary: "In 537 CE, Byzantine Emperor Justinian I dedicated the Hagia Sophia in Constantinople — the largest cathedral in the world for nearly 1,000 years. Its massive dome, appearing to float on a ring of light, was an engineering marvel that no other builder could replicate for a millennium. The historian Procopius wrote that it seemed 'suspended from heaven by a golden chain.'",
+    summary: "In 537 CE, Byzantine Emperor Justinian I dedicated the Hagia Sophia in Constantinople — the largest cathedral in the world for nearly 1,000 years. Its massive dome was an engineering marvel that no other builder could replicate for a millennium.",
     year: 537, category: 'architecture', region: 'europe', tags: ['hagia-sophia', 'byzantine']
   },
   {
     headline: "Han Emperor Wu establishes the Silk Road, linking China with the West",
-    summary: "Around 130 BCE, Han Emperor Wu established the Silk Road trade routes after Zhang Qian's pioneering diplomatic missions to Central Asia. This network of overland and maritime routes linked China with Rome, facilitating the exchange of silk, spices, glassware, and ideas across thousands of miles. The routes remained active for over 1,500 years, shaping civilizations along their length.",
+    summary: "Around 130 BCE, Han Emperor Wu established the Silk Road trade routes after Zhang Qian's pioneering diplomatic missions to Central Asia. This network linked China with Rome, facilitating the exchange of silk, spices, and ideas across thousands of miles.",
     year: -130, category: 'trade', region: 'east_asia', tags: ['silk-road', 'han-china']
   },
   {
-    headline: "Great Pyramid of Giza completed as the tallest structure on Earth",
-    summary: "Around 2560 BCE, the Great Pyramid was completed for Pharaoh Khufu, standing at 481 feet and remaining the world's tallest man-made structure for nearly 4,000 years. Built by tens of thousands of workers over roughly 20 years, it required 2.3 million stone blocks. How such engineering precision was achieved at such scale continues to fascinate and puzzle scholars.",
-    year: -2560, category: 'architecture', region: 'middle_east', tags: ['egypt', 'pyramid']
-  },
-  {
     headline: "Marco Polo departs Venice on his epic 24-year journey to China",
-    summary: "In 1271, seventeen-year-old Marco Polo set out from Venice with his father and uncle on an overland journey to the court of Kublai Khan. His travels lasted 24 years and covered over 15,000 miles across Central Asia, China, and Southeast Asia. His account, Il Milione, introduced Europeans to the wealth of Asian civilizations and inspired Columbus to seek a sea route to the East.",
+    summary: "In 1271, seventeen-year-old Marco Polo set out from Venice on an overland journey to the court of Kublai Khan. His account, Il Milione, introduced Europeans to the wealth of Asian civilizations.",
     year: 1271, category: 'exploration', region: 'europe', tags: ['marco-polo', 'silk-road']
-  },
-  {
-    headline: "Saladin recaptures Jerusalem, ending 88 years of Crusader rule",
-    summary: "On October 2, 1187, the Kurdish sultan Saladin recaptured Jerusalem from the Crusaders after the decisive Battle of Hattin, ending 88 years of Latin Christian rule. Unlike the bloody Crusader conquest of 1099, Saladin allowed Christian residents to leave safely for a ransom. His chivalry astonished Europeans and became legendary even in Western chronicles.",
-    year: 1187, category: 'warfare', region: 'middle_east', tags: ['saladin', 'crusades']
-  },
-  {
-    headline: "Battle of Talas River: Tang China and Abbasid Caliphate clash for Central Asia",
-    summary: "In 751 CE, an Abbasid Arab and Tibetan alliance defeated a Tang Chinese army at the Battle of Talas River in modern Kyrgyzstan, halting Chinese expansion into Central Asia. Among the Chinese prisoners taken were papermakers, and the technology of paper-making spread westward into the Islamic world for the first time. The battle quietly redirected the cultural trajectory of Eurasia.",
-    year: 751, category: 'warfare', region: 'east_asia', tags: ['tang', 'abbasid']
   }
 ];
 
 function getDateKey(date: Date): string {
+  const yyyy = date.getUTCFullYear();
+  const mm = String(date.getUTCMonth() + 1).padStart(2, '0');
+  const dd = String(date.getUTCDate()).padStart(2, '0');
+  return `${yyyy}-${mm}${dd}`;
+}
+
+function getMMDD(date: Date): string {
   const mm = String(date.getUTCMonth() + 1).padStart(2, '0');
   const dd = String(date.getUTCDate()).padStart(2, '0');
   return `${mm}${dd}`;
@@ -158,25 +151,38 @@ async function getRecentHistory(today: Date): Promise<{ tags: string[]; regions:
   };
 }
 
-async function searchBrave(monthName: string, day: number): Promise<string> {
-  const braveKey = process.env.BRAVE_API_KEY;
-  if (!braveKey) return '';
-
+async function fetchWikipediaEvents(month: number, day: number): Promise<string> {
   try {
-    const query = `historical events ${monthName} ${day} ancient medieval history world`;
-    const url = `https://api.search.brave.com/res/v1/web/search?q=${encodeURIComponent(query)}&count=5`;
+    const mm = String(month).padStart(2, '0');
+    const dd = String(day).padStart(2, '0');
+    const url = `https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/${mm}/${dd}`;
     const res = await fetch(url, {
       headers: {
-        'Accept': 'application/json',
-        'Accept-Encoding': 'gzip',
-        'X-Subscription-Token': braveKey
+        'User-Agent': 'DaysInHistory/1.0 (https://days-in-history.vercel.app; shaheen.chaudhri@gmail.com)',
+        'Accept': 'application/json'
       }
     });
     if (!res.ok) return '';
-    const data = await res.json() as { web?: { results?: Array<{ title: string; description?: string }> } };
-    return (data.web?.results ?? [])
-      .slice(0, 5)
-      .map(r => `${r.title}: ${r.description ?? ''}`)
+    const data = await res.json() as { events?: WikipediaEvent[] };
+    if (!data.events || data.events.length === 0) return '';
+
+    // Filter to pre-1918 events and format them
+    const ancient = data.events
+      .filter(e => e.year < 1918)
+      .sort((a, b) => a.year - b.year)
+      .slice(0, 30);
+
+    if (ancient.length === 0) return '';
+
+    return ancient
+      .map(e => {
+        const extracts = (e.pages ?? [])
+          .filter(p => p.extract)
+          .map(p => p.extract)
+          .join(' ');
+        const extra = extracts ? ` — ${extracts.slice(0, 200)}` : '';
+        return `${e.year}: ${e.text}${extra}`;
+      })
       .join('\n');
   } catch {
     return '';
@@ -186,7 +192,7 @@ async function searchBrave(monthName: string, day: number): Promise<string> {
 async function callClaude(
   anthropic: Anthropic,
   date: Date,
-  searchResults: string,
+  wikiEvents: string,
   excludedTags: string[],
   excludedRegions: string[]
 ): Promise<DailyEvent | null> {
@@ -199,28 +205,32 @@ STRICT RULES — follow all of these exactly:
 - Only select events from before 1918 CE
 - Only cover these regions: Europe (Greece, Rome, Byzantium, Western/Central Europe, Scandinavia, Russia), Middle East (Mesopotamia, Persia, Arabia, Levant, Ottoman Empire, Islamic caliphates), East Asia (primarily China and Japan, Korea where relevant), South Asia (Indian subcontinent: Maurya, Gupta, Chola, Delhi Sultanate, Mughal Empire)
 - Do NOT select events from the Americas, sub-Saharan Africa, or post-WW1 history
-- Prefer well-documented, historically significant events
+- Prefer events that actually occurred on or near this specific date
+- Prefer lesser-known but fascinating events over the most famous ones everyone already knows
 - Always respond with valid JSON only, never conversational text`;
 
   const tagNote = excludedTags.length > 0
     ? `\nRecently featured topics — avoid these: ${excludedTags.join(', ')}`
     : '';
   const regionNote = excludedRegions.length > 0
-    ? `\nRecently featured regions — avoid these: ${excludedRegions.join(', ')}`
+    ? `\nRecently featured regions — prefer a different one: ${excludedRegions.join(', ')}`
     : '';
+
+  const sourceSection = wikiEvents
+    ? `Wikipedia records these events for ${monthName} ${dayNum}:\n${wikiEvents}\n\nChoose one of these events that fits the regional constraints, or use your own knowledge if none fit.`
+    : `No Wikipedia data available. Use your knowledge of pre-1918 world history to find a notable event from ${monthName} ${dayNum}.`;
 
   const userContent = `Today's date: ${monthName} ${dayNum}
 
-Search results about historical events on this date:
-${searchResults || 'No search results available. Use your knowledge of pre-1918 world history.'}
+${sourceSection}
 ${tagNote}${regionNote}
 
-Select ONE fascinating historical event that occurred on ${monthName} ${dayNum} in history.
+Select ONE fascinating historical event that occurred on or near ${monthName} ${dayNum}.
 
 Return ONLY valid JSON with this exact structure — no other text before or after:
 {
   "headline": "max 15 words, punchy description of the event",
-  "summary": "2-4 sentences explaining what happened and why it mattered historically",
+  "summary": "3-5 sentences explaining what happened and why it mattered historically. Be vivid and specific.",
   "year": <integer — negative for BCE e.g. -44 for 44 BCE, positive for CE>,
   "category": "<exactly one of: warfare, politics, religion, science, arts, exploration, trade, architecture>",
   "region": "<exactly one of: europe, middle_east, east_asia, south_asia>",
@@ -269,14 +279,14 @@ Return ONLY valid JSON with this exact structure — no other text before or aft
 
 async function generateForDate(date: Date, anthropic: Anthropic): Promise<DailyEvent> {
   const { tags: recentTags, regions: recentRegions } = await getRecentHistory(date);
-  const monthName = MONTH_NAMES[date.getUTCMonth()];
+  const monthNum = date.getUTCMonth() + 1;
   const dayNum = date.getUTCDate();
 
-  let searchResults = '';
+  let wikiEvents = '';
   try {
-    searchResults = await searchBrave(monthName, dayNum);
+    wikiEvents = await fetchWikipediaEvents(monthNum, dayNum);
   } catch {
-    /* continue without search results */
+    /* continue without Wikipedia data */
   }
 
   let excludedTags = [...recentTags];
@@ -285,7 +295,7 @@ async function generateForDate(date: Date, anthropic: Anthropic): Promise<DailyE
 
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
-      const candidate = await callClaude(anthropic, date, searchResults, excludedTags, excludedRegions);
+      const candidate = await callClaude(anthropic, date, wikiEvents, excludedTags, excludedRegions);
       if (!candidate) continue;
 
       // On the last attempt, accept even if there's a collision
@@ -346,7 +356,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (/^\d{4}$/.test(dateParam)) {
       const mm = parseInt(dateParam.slice(0, 2), 10) - 1;
       const dd = parseInt(dateParam.slice(2, 4), 10);
-      datesToGenerate = [new Date(Date.UTC(2000, mm, dd))];
+      const now = new Date();
+      datesToGenerate = [new Date(Date.UTC(now.getUTCFullYear(), mm, dd))];
     } else {
       datesToGenerate = [new Date(dateParam)];
     }
@@ -384,3 +395,4 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   return res.status(200).json({ results });
 }
+
