@@ -17,25 +17,32 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
+    const now = new Date();
+    const yyyy = now.getUTCFullYear();
     let dateKey: string;
     let displayDate: string;
 
     const dateParam = req.query.date as string | undefined;
 
     if (dateParam && /^\d{4}$/.test(dateParam)) {
-      dateKey = dateParam;
+      // Legacy MMDD format — try new key first, fall back to old
+      dateKey = `${yyyy}-${dateParam}`;
       const month = parseInt(dateParam.slice(0, 2), 10) - 1;
       const day = parseInt(dateParam.slice(2, 4), 10);
       displayDate = `${MONTH_NAMES[month]} ${day}`;
     } else {
-      const now = new Date();
       const mm = String(now.getUTCMonth() + 1).padStart(2, '0');
       const dd = String(now.getUTCDate()).padStart(2, '0');
-      dateKey = `${mm}${dd}`;
+      dateKey = `${yyyy}-${mm}${dd}`;
       displayDate = `${MONTH_NAMES[now.getUTCMonth()]} ${now.getUTCDate()}`;
     }
 
-    const event = await kv.get(`event:${dateKey}`);
+    // Try new YYYY-MMDD key first, fall back to legacy MMDD key
+    let event = await kv.get(`event:${dateKey}`);
+    if (!event) {
+      const legacyKey = dateKey.replace(/^\d{4}-/, '');
+      event = await kv.get(`event:${legacyKey}`);
+    }
 
     if (!event) {
       return res.status(503).json({
@@ -51,3 +58,4 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).json({ error: 'Internal server error' });
   }
 }
+
